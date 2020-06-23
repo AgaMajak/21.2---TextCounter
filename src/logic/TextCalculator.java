@@ -8,7 +8,7 @@ import java.util.stream.Collectors;
 
 public class TextCalculator {
 
-    public static int countWordsUsingStringTokenizer(String sentence) {
+    public static int countWords(String sentence) {
         if (sentence == null || sentence.isEmpty()) {
             return 0;
         }
@@ -32,8 +32,8 @@ public class TextCalculator {
         boolean isAPalindrome = false;
         char blank = ' ';
         List<Character> characterList = text.chars()
-                .mapToObj(i -> (char) i)
-                .filter(c -> c != blank)
+                .mapToObj(textChar -> (char) textChar)
+                .filter(textChar -> textChar != blank)
                 .collect(Collectors.toList());
         List<Character> reversedCharacterList = new ArrayList<>(characterList);
         Collections.reverse(reversedCharacterList);
